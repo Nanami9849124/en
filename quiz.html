@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enviro Quiz - Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 3;
+        let correctAnswers = 0;
+        const correctOptions = ['B', 'B', 'B'];
+        let userAnswers = [];
+
+        function showQuestion(questionNumber) {
+            document.querySelectorAll('.question-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById('question' + questionNumber).style.display = 'block';
+        }
+
+        function handleAnswer(option) {
+            userAnswers[currentQuestion - 1] = option;
+            if (option === correctOptions[currentQuestion - 1]) {
+                correctAnswers++;
+            }
+
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            let resultsHtml = `<div class="results-container">`;
+            resultsHtml += correctAnswers >= 2 ? `<div class="score good">${correctAnswers} out of ${totalQuestions}</div>` 
+                                                : `<div class="score poor">${correctAnswers} out of ${totalQuestions} - Good effort!</div>`;
+            
+            if (correctAnswers === totalQuestions) {
+                resultsHtml += '<div style="background-color: green; color: white;">Congratulations, you answered all questions correctly! You have been entered into the draw!</div>';
+            } else {
+                resultsHtml += '<div>Review your answers:</div>';
+                for (let i = 0; i < totalQuestions; i++) {
+                    resultsHtml += `<div class="${userAnswers[i] === correctOptions[i] ? 'correct-answer' : 'incorrect-answer'}">Question ${i + 1}: Correct answer is Option B. Your answer: Option ${userAnswers[i]}</div>`;
+                }
+            }
+            resultsHtml += '</div>';
+
+            document.body.innerHTML = resultsHtml;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showQuestion(currentQuestion);
+        });
+    </script>
+</head>
+<body>
+    <h1>Enviro Quiz</h1>
+    <div class="quiz-container">
+        <div class="question-page" id="question1">
+            <div class="question">1. What is the primary cause of global warming?</div>
+            <div class="options">
+                <button class="option" onclick="handleAnswer('A')">Option A: Deforestation</button>
+                <button class="option" onclick="handleAnswer('B')">Option B: Greenhouse gases</button>
+                <button class="option" onclick="handleAnswer('C')">Option C: Ozone depletion</button>
+            </div>
+        </div>
+        <div class="question-page" id="question2">
+            <div class="question">2. Which energy source is considered renewable?</div>
+            <div class="options">
+                <button class="option" onclick="handleAnswer('A')">Option A: Coal</button>
+                <button class="option" onclick="handleAnswer('B')">Option B: Solar energy</button>
+                <button class="option" onclick="handleAnswer('C')">Option C: Natural gas</button>
+            </div>
+        </div>
+        <div class="question-page" id="question3">
+            <div class="question">3. What can individuals do to reduce their carbon footprint?</div>
+            <div class="options">
+                <button class="option" onclick="handleAnswer('A')">Option A: Drive more</button>
+                <button class="option" onclick="handleAnswer('B')">Option B: Plant trees</button>
+                <button class="option" onclick="handleAnswer('C')">Option C: Use more plastic</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
