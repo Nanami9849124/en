@@ -5,20 +5,26 @@ body {
     text-align: center;
 }
 
-.header h1, .header p {
-    margin: 0;
+.header h1 {
+    margin: 5px 0; /* Further reduced margin for the title */
+    font-size: 2em; /* Font size, adjust if needed */
+}
+
+.header p {
+    margin: 5px 0; /* Maintained reduced margin for the description */
 }
 
 .main-content {
     text-align: center;
+    margin-top: 15px; /* Further reduced space between header and boxes */
 }
 
 .box {
     border: 2px solid black;
-    padding: 20px;
+    padding: 15px; /* Slightly reduced padding */
     width: 30%;
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 10px; /* Further reduced space above the boxes */
     cursor: pointer;
 }
 
@@ -40,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 70vh; /* Adjusted for overall page balance */
 }
 
 .quiz-container {
