@@ -6,26 +6,33 @@ body {
 }
 
 .header h1 {
-    margin: 1px 0; /* Minimized margin for the title */
-    font-size: 2em; /* Adjust font size if needed */
+    margin: 0 0 10px 0; /* Adjusted margin for the title */
+    font-size: 3em; /* Increased font size */
 }
 
 .header p {
-    margin: 1px 0; /* Minimized margin for the description */
+    margin: 0 0 20px 0; /* Increased margin for the description */
+    font-size: 1.5em; /* Increased font size */
+}
+
+.logo-space {
+    font-size: 2em; /* Increased font size for logo */
+    margin-bottom: 20px; /* Added spacing below logo */
 }
 
 .main-content {
     text-align: center;
-    margin-top: 5px; /* Significantly reduced space between header and boxes */
+    margin-top: 20px; /* Adjusted space between header and boxes */
 }
 
 .box {
     border: 2px solid black;
-    padding: 10px;
-    width: 30%;
+    padding: 20px; /* Increased padding to make boxes fatter */
+    width: 35%; /* Adjusted width */
     display: inline-block;
-    margin: 5px; /* Reduced space around the boxes */
+    margin: 15px; /* Increased margin for spacing between boxes */
     cursor: pointer;
+    font-size: 1.5em; /* Increased font size */
 }
 
 .box:hover {
@@ -39,69 +46,5 @@ body {
     width: 100%;
     background-color: #f1f1f1;
     text-align: center;
-    padding: 5px; /* Reduced padding in the footer */
-}
-
-.centered-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh; /* Adjusted for a more compact vertical alignment */
-}
-
-.quiz-container {
-    text-align: left;
-    margin: 20px;
-}
-
-.question-page {
-    display: none;
-    text-align: center;
-}
-
-.question-page.active {
-    display: block;
-}
-
-.question {
-    font-size: 1.5em;
-    margin: 40px 0;
-}
-
-.options button {
-    margin: 5px;
-    padding: 10px;
-}
-
-.options button:hover {
-    background-color: black;
-    color: white;
-}
-
-.results-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.correct-answer {
-    color: green;
-}
-
-.incorrect-answer {
-    color: red;
-}
-
-.score {
-    text-align: center;
-    font-size: 2em;
-    margin-top: 20px;
-}
-
-.score.good {
-    color: green;
-    font-weight: bold;
-}
-
-.score.poor {
-    color: red;
+    padding: 10px; /* Adjusted padding */
 }
