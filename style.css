@@ -94,29 +94,15 @@ body {
     background-color: #f1f1f1;
 }
 
+/* ... [Rest of your CSS] ... */
+
+/* Adjusted styles for the quiz results */
 .results-container {
     text-align: center;
     margin-top: 20px;
+    font-size: 2em; /* Setting the general font size for the results container */
 }
 
-.correct-answer {
-    color: green; /* Style for correct answers */
-}
-
-.incorrect-answer {
-    color: red; /* Style for incorrect answers */
-}
-
-.score.good {
-    color: green; /* Green color for good score */
-}
-
-.score.poor {
-    color: red; /* Red color for poor score */
-}
-/* ... [Your existing CSS styles] ... */
-
-/* New styles for the quiz results */
 .score-ball {
     border-radius: 50%;
     width: 100px;
@@ -125,7 +111,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 20px auto;
-    font-size: 2em;
+    /* The font size for score is already set to 2em */
 }
 
 .good-score {
@@ -138,8 +124,8 @@ body {
     color: white;
 }
 
+/* Assuming entry-message and review-message should also match the home page text size */
 .entry-message, .review-message {
-    font-size: 2em; /* Adjust to match other pages */
+    /* The font size is already set to 2em */
     margin-top: 20px;
 }
-
