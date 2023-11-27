@@ -31,28 +31,23 @@
             }
         }
 
-       function showResults() {
-    let scoreClass = correctAnswers >= 2 ? 'score-ball good-score' : 'score-ball poor-score';
-    let resultsHtml = '<div class="results-wrapper">';
-    resultsHtml += `<div class="${scoreClass}">${correctAnswers} out of ${totalQuestions}</div>`;
-    // ... [rest of your results HTML]
-    resultsHtml += '</div>';
+        function showResults() {
+            let scoreClass = correctAnswers >= 2 ? 'score-ball good-score' : 'score-ball poor-score';
+            let resultsHtml = '<div class="results-wrapper">';
+            resultsHtml += `<div class="${scoreClass}">${correctAnswers} out of ${totalQuestions}</div>`;
+            
+            if (correctAnswers === totalQuestions) {
+                resultsHtml += '<div class="entry-message">Congratulations, you answered all questions correctly! You have been entered into the draw!</div>';
+            } else {
+                resultsHtml += '<div class="review-message">Review your answers:</div>';
+                for (let i = 0; i < totalQuestions; i++) {
+                    resultsHtml += `<div class="${userAnswers[i] === correctOptions[i] ? 'correct-answer' : 'incorrect-answer'}">Question ${i + 1}: Correct answer is Option B. Your answer: Option ${userAnswers[i]}</div>`;
+                }
+            }
+            resultsHtml += '</div>';
 
-    document.body.innerHTML = resultsHtml;
-}
-    
-    if (correctAnswers === totalQuestions) {
-        resultsHtml += '<div class="entry-message">Congratulations, you answered all questions correctly! You have been entered into the draw!</div>';
-    } else {
-        resultsHtml += '<div class="review-message">Review your answers:</div>';
-        for (let i = 0; i < totalQuestions; i++) {
-            resultsHtml += `<div class="${userAnswers[i] === correctOptions[i] ? 'correct-answer' : 'incorrect-answer'}">Question ${i + 1}: Correct answer is Option B. Your answer: Option ${userAnswers[i]}</div>`;
+            document.body.innerHTML = resultsHtml;
         }
-    }
-    resultsHtml += '</div>';
-
-    document.body.innerHTML = resultsHtml;
-}
 
         document.addEventListener('DOMContentLoaded', function() {
             showQuestion(currentQuestion);
