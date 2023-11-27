@@ -33,8 +33,13 @@
 
        function showResults() {
     let scoreClass = correctAnswers >= 2 ? 'score-ball good-score' : 'score-ball poor-score';
-    let resultsHtml = `<div class="results-container">`;
+    let resultsHtml = '<div class="results-wrapper">';
     resultsHtml += `<div class="${scoreClass}">${correctAnswers} out of ${totalQuestions}</div>`;
+    // ... [rest of your results HTML]
+    resultsHtml += '</div>';
+
+    document.body.innerHTML = resultsHtml;
+}
     
     if (correctAnswers === totalQuestions) {
         resultsHtml += '<div class="entry-message">Congratulations, you answered all questions correctly! You have been entered into the draw!</div>';
