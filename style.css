@@ -125,15 +125,17 @@ body {
 
 .score-ball {
     border-radius: 50%;
-    width: 150px; /* Increase the size */
-    height: 150px; /* Increase the size */
+    width: 150px; /* Adjust the size of the ball if necessary */
+    height: 150px; /* Adjust the size of the ball if necessary */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px auto; /* Increase the top margin to push it further down */
-    font-size: 3em; /* Increase font size within the ball */
+    margin: 40px auto; /* Positioning */
+    font-size: 1.5em; /* Adjust the font size to fit the text within the ball */
+    text-align: center;
 }
 
+/* Styles for good and poor scores */
 .good-score {
     background-color: green;
     color: white;
