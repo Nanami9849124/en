@@ -105,13 +105,13 @@ body {
 
 .score-ball {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px; /* Increase the size */
+    height: 150px; /* Increase the size */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
-    /* The font size for score is already set to 2em */
+    margin: 40px auto; /* Increase the top margin to push it further down */
+    font-size: 3em; /* Increase font size within the ball */
 }
 
 .good-score {
